@@ -1,9 +1,15 @@
 package poliestable;
+
+
 public class Semaforo {
+
 	private estadoEnum state ;
+	private Observador obs;
+	
 	public Semaforo () {
 		state= estadoEnum.ROJO;
 		
+		obs= new Observador();
 	}
 	private Color instacias () {
 		Color instancia = null;
@@ -21,12 +27,14 @@ public class Semaforo {
 	
 	public void abrir () {
 		Color inst= this.instacias();
+		inst.setMode(obs);
 		inst.abrir();
 		this.state= inst.getState();
 	
 	}
 	public void cerrar () {
 		Color inst= this.instacias();
+		inst.setMode(obs);
 		inst.cerrar();
 		this.state= inst.getState();
 	
@@ -36,5 +44,11 @@ public class Semaforo {
 		
 		return state;
 	}
-
+	public void cambio() {
+		obs.actualizacion();
 }
+		
+		
+	}
+
+

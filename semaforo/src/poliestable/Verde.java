@@ -8,8 +8,11 @@ public class Verde extends Color {
 	}
 	
 	public void  cerrar () {
+		if (this.bies) {
+			super.cerrar();
+		}else {
 		this.stateColor= estadoEnum.AMARILLO;
-		
+		}
 	}
 	
 }

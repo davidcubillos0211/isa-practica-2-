@@ -6,9 +6,11 @@ public class Rojo extends Color {
 	}
 		
 		public void abrir () {
+			if (this.bies) {
+				super.abrir();
+			}else {
 			this.stateColor= estadoEnum.AMARILLO;
-			
-		
+			}
 	}
 	
 	
